@@ -1,6 +1,6 @@
 import nni
 import pandas as pd
-import xgboost as xgb
+import xgboost as xgb 
 import logging
 from sklearn.metrics import r2_score, accuracy_score
 from sklearn.model_selection import train_test_split
@@ -66,7 +66,6 @@ def get_model(PARAMS):
         reg_lambda=PARAMS['reg_lambda'],  # Добавленный гиперпараметр
         scale_pos_weight=PARAMS['scale_pos_weight'],  # Добавленный гиперпараметр
         # objective='reg:squarederror',
-        tree_method='gpu_hist'
     )
 
     return model
@@ -77,6 +76,7 @@ def run(X_train, X_test, y_train, y_test, model):
     try:
         model.fit(X_train, y_train)
         predict_y = model.predict(X_test)
+
         score = accuracy_score(y_test, predict_y)
         LOG.debug('accuracy score: %s', score)
         LOG.debug('Функция run')
