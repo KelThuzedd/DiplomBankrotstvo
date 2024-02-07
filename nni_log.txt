@@ -1,0 +1,12 @@
+2024-02-04 12:40:01,643 - xgboost_regression - DEBUG - {}
+2024-02-04 12:40:01,643 - xgboost_regression - DEBUG - {'max_depth': 3, 'n_estimators': 100, 'learning_rate': 0.1, 'subsample': 1, 'gamma': 0, 'min_child_weight': 1, 'max_delta_step': 0, 'colsample_bytree': 1, 'reg_alpha': 0, 'reg_lambda': 1, 'scale_pos_weight': 1}
+2024-02-04 12:40:01,643 - xgboost_regression - DEBUG - Параметры получены
+2024-02-04 12:40:02,132 - xgboost_regression - DEBUG - r2 score: 0.42218963554433653
+2024-02-04 12:40:02,133 - xgboost_regression - DEBUG - Функция run
+2024-02-04 12:40:02,133 - xgboost_regression - DEBUG - Модель запущена
+2024-02-04 12:48:48,288 - xgboost_regression - DEBUG - {}
+2024-02-04 12:48:48,288 - xgboost_regression - DEBUG - {'max_depth': 3, 'n_estimators': 100, 'learning_rate': 0.1, 'subsample': 1, 'gamma': 0, 'min_child_weight': 1, 'max_delta_step': 0, 'colsample_bytree': 1, 'reg_alpha': 0, 'reg_lambda': 1, 'scale_pos_weight': 1}
+2024-02-04 12:48:48,289 - xgboost_regression - DEBUG - Параметры получены
+2024-02-04 12:48:48,650 - xgboost_regression - DEBUG - r2 score: 0.42218963554433653
+2024-02-04 12:48:48,651 - xgboost_regression - DEBUG - Функция run
+2024-02-04 12:48:48,651 - xgboost_regression - DEBUG - Модель запущена

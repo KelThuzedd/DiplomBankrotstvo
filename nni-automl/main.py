@@ -2,8 +2,8 @@ import nni
 import pandas as pd
 import xgboost as xgb 
 import logging
-from sklearn.metrics import r2_score, accuracy_score
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score
+# nnictl create --config config.yaml
 
 # Загружаем данные из формата parquet
 X_train = pd.read_parquet('../data/X_train.parquet')
@@ -53,7 +53,7 @@ def get_default_parameters():
 
 def get_model(PARAMS):
     '''Получите модель XGBoost с параметрами из NNI'''
-    model = xgb.XGBClassifier(
+    model = xgb.XGBRegressor(
         max_depth=PARAMS['max_depth'],
         n_estimators=PARAMS['n_estimators'],
         learning_rate=PARAMS['learning_rate'],
@@ -77,8 +77,8 @@ def run(X_train, X_test, y_train, y_test, model):
         model.fit(X_train, y_train)
         predict_y = model.predict(X_test)
 
-        score = accuracy_score(y_test, predict_y)
-        LOG.debug('accuracy score: %s', score)
+        score = r2_score(y_test, predict_y)
+        LOG.debug('r2 score: %s', score)
         LOG.debug('Функция run')
         nni.report_final_result(score)
     except Exception as e:
